@@ -1,0 +1,58 @@
+*{
+    font-family: 'Poppins', sans-serif;
+}
+.body{
+    margin: 0;
+}
+
+.page-title{
+    text-align: center;
+}
+
+.main-part{
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+}
+
+.drawing,
+.eraser,
+.clear-canvas,
+.show-grid-line{
+    margin: 5px;
+    padding: 5px;
+    border: 1px solid black;
+    text-align: center;
+    cursor: pointer;
+}
+
+.btn-active{
+    /* for now */
+    color: red; 
+}
+
+.drawing-canvas{
+    display: grid;
+    width: 500px;
+    height: 500px;
+    border: 1px solid black;
+}
+
+.pixel{
+    padding: 1px;
+}
+
+.pixel-grid{
+    border: 1px solid black;
+}
+
+.page-footer{
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    text-align: center;
+}
+
+.notes{
+    margin: 0 auto;
+}
