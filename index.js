@@ -7,7 +7,7 @@ const MIN_COLS = 4;
 const DEFAULT_COLOR = "#000000";
 const DEFAULT_MODE = "draw";
 
-let pixel_row = DEFAULT_ROW;
+let pixel_row = DEFAULT_ROW;        
 let pixel_col = DEFAULT_COL;
 let color_picker = DEFAULT_COLOR; // used to store the selected color 
 let current_mode = "";
@@ -15,6 +15,8 @@ let current_color = DEFAULT_COLOR; // the color that is drawing
 let mouseDown = false;
 let showGrid = false;
 
+
+// getting important html section and tag of this webpage
 const canvasGrid = document.querySelector('.drawing-canvas');
 const increaseDim = document.querySelector('.increase-size');
 const decreaseDim = document.querySelector('.decrease-size');
@@ -22,8 +24,10 @@ const drawBtn  = document.querySelector('.drawing');
 const eraserBtn = document.querySelector('.eraser');
 const clearBtn = document.querySelector('.clear-canvas');
 const gridControl = document.querySelector('.show-grid-line');
+const dimDisplay = document.querySelector('.dim-display');
 const canActive = [drawBtn, eraserBtn];
 
+// event listeners part
 document.body.onmousedown = () => {mouseDown = true};
 document.body.onmouseup = () => {mouseDown = false};
 clearBtn.addEventListener('click', clearCanvas);
@@ -57,8 +61,9 @@ decreaseDim.addEventListener('click', () => {
     initialCanvas(pixel_row, pixel_col);
 })
 
+
+// helper function part
 function setGrid(){
-    
     document.querySelectorAll('.pixel').forEach(px => {
         if(showGrid){
             px.classList.add('pixel-grid');
@@ -110,9 +115,14 @@ function initialCanvas(rows, cols){
             canvasGrid.appendChild(pixel);
         }
     }
-
+    updateDim();
 }
 
+function updateDim(){
+    dimDisplay.innerHTML = `${pixel_row} x ${pixel_col}`;
+}
+
+// 
 window.onload = () => {
     setMode("draw");
     showGrid = true;
