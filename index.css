@@ -4,6 +4,7 @@
 body{
     margin: 0;
     background-color: rgb(255, 237, 219);
+    min-width: 700px;
 }
 
 .page-title{
@@ -62,15 +63,17 @@ body{
 
 .pixel{
     padding: 1px;
+    background-color: white;
 }
 
 .pixel-grid{
     border: 1px solid black;
-    background-color: white;
+    /* background-color: white; */
 }
 
 .page-footer{
     width: 100%;
+    min-width: inherit;
     position: absolute;
     bottom: 0;
     text-align: center;
